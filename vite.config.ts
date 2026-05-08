@@ -7,16 +7,19 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      include: ['src'],
-    }),
+      rollupTypes: true,  
+      tsconfigPath:"./tsconfig.json",
+      outDir: 'dist/types',
+    }), 
   ],
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'TableTan',
-      formats: ['es', 'umd'],
-      fileName: (format) => `table-tan.${format}.js`,
+      name: 'tabletan',
+      // formats: ['es'],
+      fileName: (format) => `index.${format}.js`,
     },
+    copyPublicDir: false,
     cssCodeSplit: false,
     rollupOptions: {
       // Externalize everything that consumers must install themselves
@@ -43,9 +46,10 @@ export default defineConfig({
           '@dnd-kit/utilities': 'DndKitUtilities',
           localforage: 'localforage',
         },
-        // Preserve CSS class names used by Tailwind JIT
-        assetFileNames: 'style[extname]',
       },
     },
+    sourcemap: process.env.NODE_ENV === 'development',
+    outDir: 'dist',
+    emptyOutDir: true,
   },
 });
