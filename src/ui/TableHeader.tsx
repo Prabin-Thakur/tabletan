@@ -219,7 +219,6 @@ export const TableHeader = <T,>({
 };
 
 // ─── Inner header cell content ────────────────────────────────────────────────
-
 interface HeaderContentProps<T> {
   header: Header<T, unknown>;
   hasFilter: boolean;
