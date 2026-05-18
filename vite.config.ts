@@ -7,16 +7,15 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      rollupTypes: true,  
-      tsconfigPath:"./tsconfig.json",
-      outDir: 'dist/types',
+      rollupTypes: true,
+      tsconfigPath: "./tsconfig.json",
     }), 
   ],
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'tabletan',
-      // formats: ['es'],
+      formats: ['es', 'umd',],
       fileName: (format) => `index.${format}.js`,
     },
     copyPublicDir: false,

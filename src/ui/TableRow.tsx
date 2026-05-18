@@ -132,7 +132,7 @@ export const TableRow = <T,>({
       {/* Sub-component Expansion */}
       {isExpanded && renderSubComponent && (
         <tr
-          className="bg-gray-50/50 dark:bg-gray-800/30 border-b border-gray-100 dark:border-gray-800"
+          className="bg-gray-50/50 dark:bg-gray-800/30 border-b border-gray-200 dark:border-gray-700"
           style={{ display: 'flex', width: '100%' }}
         >
           <td className="p-0 border-none w-full">

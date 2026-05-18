@@ -26,8 +26,8 @@ const S = {
   HEADER:       'sticky top-0 z-[40]',
   BG_STICKY:    'bg-gray-100 dark:bg-gray-800',
   BG_NORMAL:    'bg-gray-50 dark:bg-gray-900',
-  BORDER_RIGHT: 'border-r-2 !border-r-gray-300 dark:!border-r-gray-600',
-  BORDER_LEFT:  'border-l-2 !border-l-gray-300 dark:!border-l-gray-600',
+  BORDER_RIGHT: 'border-r-2 !border-r-gray-200 dark:!border-r-gray-700',
+  BORDER_LEFT:  'border-l-2 !border-l-gray-200 dark:!border-l-gray-700',
 };
 
 export const TableHeader = <T,>({
@@ -96,7 +96,7 @@ export const TableHeader = <T,>({
     const colStyle      = getColStyle(header, stickyStyle, isSticky);
     const sharedClass   = `
       ${CLASSES.CELL}
-      border-b border-r border-gray-200 dark:border-gray-800
+      border-b border-r border-gray-200 dark:border-gray-700
       text-gray-600 dark:text-gray-300
       ${isSticky ? S.BG_STICKY : S.BG_NORMAL}
       ${getStickyBorderClass(header.column.id)}
@@ -167,7 +167,7 @@ export const TableHeader = <T,>({
 
             {/* ── Per-column search row (only on leaf/last header group) ── */}
             {groupIdx === allGroups.length - 1 && hasSearchRow && (
-              <tr className="relative flex w-full border-b border-gray-200 dark:border-gray-800">
+              <tr className="relative flex w-full border-b border-gray-200 dark:border-gray-700">
                 {headerGroup.headers.map(header => {
                   const stickyStyle   = getStickyStyle(header.column.id);
                   const isSticky      = enableSticky && !!stickyStyle.position;
@@ -178,7 +178,7 @@ export const TableHeader = <T,>({
                       key={`filter-${header.id}`}
                       style={getColStyle(header, stickyStyle, isSticky)}
                       className={`
-                        px-2 py-1.5 border-r border-gray-200 dark:border-gray-800
+                        px-2 py-1.5 border-b border-r border-gray-200 dark:border-gray-700
                         ${isSticky ? S.BG_STICKY : S.BG_NORMAL}
                         ${getStickyBorderClass(header.column.id)}
                       `}

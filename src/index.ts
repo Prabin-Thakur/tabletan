@@ -1,6 +1,3 @@
-// ─── Styles
-import './index.css';
-
 // ─── Main components ─────────────────────────────────────────────────────────
 export { DataTable }               from './DataTable';
 export { BasicTable }              from './BasicTable';

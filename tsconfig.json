@@ -13,7 +13,8 @@
 
     "declaration": true,
     "emitDeclarationOnly": true,
-    "declarationDir": "dist",
+    "declarationDir": "dist/types",
+    "rootDir": "src",
 
     "skipLibCheck": true
   },
