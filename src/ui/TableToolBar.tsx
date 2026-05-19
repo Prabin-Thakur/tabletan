@@ -3,6 +3,7 @@ import { Table as TableType, Column } from '@tanstack/react-table';
 import { Search, SlidersHorizontal, Download, X, Check, Columns } from './icons';
 import { FilteringConfig } from '../utils/types';
 import { DebouncedInput } from './DebouncedInput';
+import { CLASSES } from 'src/utils/constants';
 interface TableToolbarProps<T> {
   table: TableType<T>;
   enableGlobalSearch?: boolean;
@@ -175,7 +176,7 @@ export const TableToolbar = <T,>({
                 </div>
 
                 {/* Column list */}
-                <div className="max-h-[320px] overflow-y-auto py-1.5">
+                <div className={`max-h-[320px] overflow-y-auto py-1.5 ${CLASSES.SCROLLBAR_STYLES}`}>
                   {table.getAllLeafColumns().filter(col => col.getCanHide()).map(column => {
                       const isVisible = column.getIsVisible();
                       const searchOn  = columnsWithSearch.has(column.id);

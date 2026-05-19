@@ -24,6 +24,8 @@ export const CLASSES = {
     [&::-webkit-scrollbar-thumb]:rounded
     [&::-webkit-scrollbar-thumb]:hover:bg-gray-500
     [&::-webkit-scrollbar-thumb]:dark:hover:bg-gray-500
+    [&::-webkit-scrollbar-corner]:bg-gray-100
+    [&::-webkit-scrollbar-corner]:dark:bg-gray-800
     scrollbar-width: thin;
   `
 } as const;
