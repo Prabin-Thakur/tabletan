@@ -3,7 +3,7 @@ import { Table as TableType, Column } from '@tanstack/react-table';
 import { Search, SlidersHorizontal, Download, X, Check, Columns } from './icons';
 import { FilteringConfig } from '../utils/types';
 import { DebouncedInput } from './DebouncedInput';
-import { CLASSES } from 'src/utils/constants';
+import { CLASSES } from '../utils/constants';
 interface TableToolbarProps<T> {
   table: TableType<T>;
   enableGlobalSearch?: boolean;
